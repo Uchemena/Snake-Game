@@ -15,6 +15,8 @@ snake = Snake()
 food = Food()
 scoreboard = Scoreboard()
 
+
+ #Movement
 screen.listen()
 screen.onkey(snake.up, "Up")
 screen.onkey(snake.down, "Down")
@@ -38,6 +40,7 @@ while game_is_on:
         game_is_on = False
         scoreboard.game_over()
 
+       
     #Detect collision with tail.
     for segment in snake.segments:
         if segment == snake.head:
@@ -45,7 +48,6 @@ while game_is_on:
         elif snake.head.distance(segment) < 10:
             game_is_on = False
             scoreboard.game_over()
-
 
 
 
